@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "3d4a6343f3028a51911c38e79c3149792d89c3d0",
+    "author": "Erik Bülow <eriklgb@gmail.com>",
+    "time": "2021-02-02 05:46:57",
+    "files": 1,
+    "merge": false,
+    "message": "version bump\n"
+  },
+  "remote": "https://github.com/ropensci/coder",
+  "pkg": "coder"
+}
