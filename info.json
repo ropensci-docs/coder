@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "957d87186c11f55b6df0406684bc787b86b74d39",
+    "author": "Erik Bülow <eriklgb@gmail.com>",
+    "time": "2023-03-14 16:23:17",
+    "files": 5,
+    "merge": false,
+    "message": "missed doc\n"
+  },
+  "repo": "https://github.com/ropensci/coder",
+  "pkg": "coder"
+}

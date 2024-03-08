@@ -1,0 +1,13 @@
+pandoc: 2.16.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  Interpret_regular_expressions: Interpret_regular_expressions.html
+  classcodes: classcodes.html
+  coder: coder.html
+  ex_data: ex_data.html
+last_built: 2024-03-08T06:24Z
+urls:
+  reference: https://docs.ropensci.org/coder/reference
+  article: https://docs.ropensci.org/coder/articles
+
