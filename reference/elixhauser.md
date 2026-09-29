@@ -1,0 +1,116 @@
+# Classcodes for Elixhauser based on ICD-codes
+
+Solid tumors are subordinate to metastatic cancer. A patient with both
+conditions will still be classified as such but a possible (weighted)
+index value will only account for metastatic cancer. The same is true
+for "diabetes uncomplicated", which is subordinate of "diabetes
+complicated". See Elixhauser et al. (1998).
+
+## Usage
+
+``` r
+elixhauser
+```
+
+## Format
+
+A data frame with 31 rows and 8 variables:
+
+- group:
+
+  comorbidity groups
+
+- icd10:
+
+  regular expressions identifying ICD-10 codes of each group.
+  Corresponds to column 'ICD-10' in table 2 of Quan et al. (2005).
+
+- icd10_short:
+
+  regular expressions identifying only the first three characters of
+  ICD-10 codes of each group. This alternative version was added only to
+  use in emergency when only the first three digits are available. It is
+  not an official version and we do not recommend to use it!
+
+- icd9cm:
+
+  Corresponds to column 'Elixhauser's Original ICD-9-CM' in table 2 of
+  Quan et al. (2005).
+
+- icd9cm_ahrqweb:
+
+  Corresponds to column 'Elixhauser AHRQ-Web ICD-9-CM' in table 2 of
+  Quan et al. (2005).
+
+- icd9cm_enhanced:
+
+  Corresponds to column 'Enhanced ICD-9-CM' in table 2 of Quan et al.
+  (2005).
+
+- sum_all:
+
+  all weights = 1 (thus no weights)
+
+- sum_all_ahrq:
+
+  as `sum_all` excluding "cardiac arrhythmia. Compare to
+  `icd9cm_ahrqweb` which does not consider this condition.
+
+- walraven:
+
+  weights suggested by Walraven et al. (2009)
+
+- sid29:
+
+  weights suggested by Thompson et al. (2015) based on all conditions
+  except cardiac arrhythmia
+
+- sid30:
+
+  weights suggested by Thompson et al. (2015) based on all conditions
+
+- ahrq_mort:
+
+  weights for in-hospital mortality suggested by Moore et al. (2017)
+
+- ahrq_readm:
+
+  weights for readmissions suggested by Moore et al. (2017)
+
+## Details
+
+Note that "DRG screen" as proposed in table 1 of Elixhauser et al.
+(1998) is not handled by the coder package. This should instead be
+considered as an additional pre- or post-processing step!
+
+## References
+
+Elixhauser A, Steiner C, Harris DR, Coffey RM (1998). Comorbidity
+Measures for Use with Administrative Data. Med Care. 1998;36(1):8–27.
+
+Moore, B. J., White, S., Washington, R., Coenen, N., & Elixhauser, A.
+(2017). Identifying Increased Risk of Readmission and In-hospital
+Mortality Using Hospital Administrative Data. Medical Care, 55(7),
+698–705.
+
+Quan Hude et al. (2005). Coding algorithms for defining comorbidities in
+ICD-9-CM and ICD-10 administrative data. Medical care, 1130-1139.
+
+Thompson, N. R., Fan, Y., Dalton, J. E., Jehi, L., Rosenbaum, B. P.,
+Vadera, S., & Griffith, S. D. (2015). A new Elixhauser-based comorbidity
+summary measure to predict in-hospital mortality. Med Care, 53(4),
+374–379.
+
+Walraven, C. Van, Austin, P. C., Jennings, A., Quan, H., Alan, J.,
+Walraven, C. Van, … Jennings, A. (2009). A Modification of the
+Elixhauser Comorbidity Measures Into a Point System for Hospital Death
+Using Administrative Data. Medical Care, 47(6), 626–633.
+
+## See also
+
+Other default classcodes:
+[`ae`](https://docs.ropensci.org/coder/reference/ae.md),
+[`charlson`](https://docs.ropensci.org/coder/reference/charlson.md),
+[`cps`](https://docs.ropensci.org/coder/reference/cps.md),
+[`hip_ae_hailer`](https://docs.ropensci.org/coder/reference/hip_ae_hailer.md),
+[`rxriskv`](https://docs.ropensci.org/coder/reference/rxriskv.md)

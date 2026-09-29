@@ -1,0 +1,107 @@
+# Classcodes for Charlson comorbidity based on ICD-codes
+
+Classcodes for Charlson comorbidity based on ICD-codes
+
+## Usage
+
+``` r
+charlson
+```
+
+## Format
+
+A data frame with 17 rows and 8 variables:
+
+- `group:` comorbidity groups
+
+- `description:` Verbal description of codes as described by Deyo et al.
+  (1992).
+
+- `icd10:` regular expressions identifying ICD-10 codes of each group as
+  decoded from Quan et al. 2005. Note that this classification was not
+  originally used with all weights! To simply use this classification
+  table with weights other than `quan_original` and `quan_updated` might
+  therefore lead to different results than originally intended for each
+  index.
+
+- `icd9cm_deyo:`Codes from table 1 column "Deyo's ICD-9-CM" in Quan et
+  al. (2005). Procedure code 38.48 for peripheral vascular disease
+  ignored.
+
+- `icd9cm_enhanced:` Codes from table 1 column "Enhanced ICD-9-CM" in
+  Quan et al. (2005).
+
+- `icd10_rcs:` Codification by Armitage (2010). Note that Peptic ulcer
+  disease is not included. All liver diseases (including mild) are
+  included in "moderate or severe liver disease". All diabetes is
+  included in "diabetes complication"
+
+- `icd10_swe:` Swedish version using ICD-10 by Ludvigsson et al. (2021).
+  Note that chronic pulmonary disease is combined (separated as chronic
+  and other in the article). Note that mild kidney disease combined with
+  `R18`should also count as moderate or severe kidney disease (not
+  implemented so must be handled manually).
+
+- `icd8_brusselaers:` Back translated version from ICD-10 to ICD-8 by
+  Brusselaers et al. (2017). "Moderate and severe liver disease"
+  contains all liver disease and "diabetes complication" contains all
+  diabetes.
+
+- `icd9_brusselaers:` Back translated version from ICD-10 to ICD-9 by
+  Brusselaers et al. (2017). "Moderate and severe liver disease"
+  contains all liver disease and "diabetes complication" contains all
+  diabetes.
+
+- `charlson:` original weights as suggested by Charlson et al. (1987)\*
+
+- `deyo_ramano:` weights suggested by Deyo and Romano\*
+
+- `dhoore:` weights suggested by D'Hoore\*
+
+- `ghali:` weights suggested by Ghali\*
+
+- `quan_original:` weights suggested by Quan (2005)
+
+- `quan_updated:` weights suggested by Quan (2011)
+
+&nbsp;
+
+- Weights decoded from Yurkovich et al. (2015).
+
+## References
+
+Armitage, J. N., & van der Meulen, J. H. (2010). Identifying
+co-morbidity in surgical patients using administrative data with the
+Royal College of Surgeons Charlson Score. British Journal of Surgery,
+97(5), 772–781.
+
+Brusselaers N, Lagergren J. (2017) The Charlson Comorbidity Index in
+Registry-based Research. Methods Inf Med 2017;56:401–6.
+
+Deyo, R. A., Cherkin, D. C., & Ciol, M. A. (1992). Adapting a clinical
+comorbidity index for use with ICD-9-CM administrative databases.
+Journal of Clinical Epidemiology, 45(6), 613–619.
+
+Ludvigsson, J. F., Appelros, P., Askling, J., Byberg, L., Carrero,
+J.-J., Ekström, A. M., Ekström, M., Smedby, K. E., Hagström, H., James,
+S., Järvholm, B., Michaelsson, K., Pedersen, N. L., Sundelin, H.,
+Sundquist, K., Sundström, J. Adaptation of the Charlson Comorbidity
+Index for Register-Based Research in Sweden. CLEP 2021, 13, 21–41.
+https://doi.org/10.2147/CLEP.S282475.
+
+Quan Hude et al. (2005). Coding algorithms for defining comorbidities in
+ICD-9-CM and ICD-10 administrative data. Medical care, 1130-1139.
+
+Yurkovich, M., Avina-Zubieta, J. A., Thomas, J., Gorenchtein, M., &
+Lacaille, D. (2015). A systematic review identifies valid comorbidity
+indices derived from administrative health data. Journal of clinical
+epidemiology, 68(1), 3-14.
+
+## See also
+
+Other default classcodes:
+[`ae`](https://docs.ropensci.org/coder/reference/ae.md),
+[`cps`](https://docs.ropensci.org/coder/reference/cps.md),
+[`elixhauser`](https://docs.ropensci.org/coder/reference/elixhauser.md),
+[`hip_ae_hailer`](https://docs.ropensci.org/coder/reference/hip_ae_hailer.md),
+[`rxriskv`](https://docs.ropensci.org/coder/reference/rxriskv.md)
